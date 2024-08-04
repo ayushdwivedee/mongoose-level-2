@@ -32,7 +32,7 @@ movieRoutes.post("/login", async (req, res) => {
       return res.status(400).json({ msg: "invalid credentials" });
     }
 
-    const token = jwt.sign({ name:user.name,role:user.role }, "dwi", { expiresIn: '1h' });
+    const token = jwt.sign({ name:user.name,role:user.role }, "dwi", { expiresIn:'1h'});
     res.status(201).json({ message: "login successful", token });
   } catch (error) {
     res.status(500).json({ msg: `error occured while login ${error}` });
